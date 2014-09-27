@@ -129,6 +129,7 @@ Gem::Specification.new do |spec|
 
   # Monadic/Functional
   spec.add_runtime_dependency 'andand'
+  spec.add_runtime_dependency 'ruby-try'
   # spec.add_runtime_dependency 'ick'
 
   # Audio
