@@ -10,7 +10,7 @@ module Mixin
 
     def config_choice
       defaults = YAML.load_file(File.expand_path( File.dirname( __FILE__ ) + '/../../../template/default_values.yml'))
-      defaults['jason'].each_key { |key| choice_option(defaults['jason'], key) }
+      defaults['hydra'].each_key { |key| choice_option(defaults['hydra'], key) }
       defaults
     end
 

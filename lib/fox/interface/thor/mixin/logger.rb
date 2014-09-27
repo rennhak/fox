@@ -6,7 +6,7 @@ require 'thor'
 require 'andand'
 
 # Custom includes
-# require File.expand_path( File.dirname( __FILE__ ) + '/../../../library/logger' )
+require File.expand_path( File.dirname( __FILE__ ) + '/../../../library/logger' )
 
 
 # @module       module Mixin
@@ -24,7 +24,7 @@ module Mixin
     def initialize *args
       super
 
-      @logger           = ::Fox::Logger.instance
+      @logger           = ::ClothesNetwork::Logger.instance
 
       @logger.color     = options[ :colorize ]
       @logger.silent    = options[ :silent ]
