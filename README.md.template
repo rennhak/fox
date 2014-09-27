@@ -1,5 +1,6 @@
 # Fox
 $Version$
+(this file is auto-generated from rake readme:topdir)
 
 [![Gem Version](https://badge.fury.io/rb/fox.svg)](http://badge.fury.io/rb/fox)
 [![License](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)
@@ -16,7 +17,9 @@ efficient file sharing with co-authors.
 
 Fox, currently supports only IEEE Robotics & Automation Society (ICRA) [2].
 
+
 [1] Paper Fox, named after an in similar spirit deviation from the german "papier tiger"
+
 [2] IEEE Robotics and Automation Society's flagship conference,  IEEE Robotics & Automation Society, http://icra2015.org/
 
 
@@ -83,10 +86,10 @@ As library
 or from the command line
 
 ```sh
-~# fox 
+~# fox help
 
-Commands:
-  fox generate
+$fox_tasks$
+
 ```
 
 ## DEVELOPMENT
@@ -173,14 +176,17 @@ Development uses SQLite3
 
 For a full list of Rake tasks suported, use `rake -T`.
 
+```sh
 $rake_tasks$
-
+````
 
 ### CURRENTLY AVAILABLE THOR TASKS
 
 For a full list of Thor tasks suported, use `thor -T`.
 
+```sh
 $thor_tasks$
+````
 
 
 ## IF SOMETHING GOES WRONG
@@ -191,7 +197,7 @@ there is no valid address then try to mail Bjoern Rennhak <bjoern AT clothesnetw
 some basic assistance in finding the right person in charge of this section of the project.
 
 
-## Contributing
+## CONTRIBUTING
 
 1. Fork it ( https://github.com/rennhak/fox/fork )
 2. Create your feature branch (`git checkout -b my_new_feature`)
@@ -200,11 +206,11 @@ some basic assistance in finding the right person in charge of this section of t
 5. Create a new Pull Request
 
 
-## Authors
+## AUTHORS
 
 * [Bjoern Rennhak](https://github.com/rennhak)
 
-## Copyright & License
+## COPYRIGHT
 
 Please refer to the COPYING.md and LICENSE.md file.
 

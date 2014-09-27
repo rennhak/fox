@@ -74,10 +74,14 @@ def generate_readme source, target
   version     = `git describe --tags`.strip
   rake_tasks  = `rake -T`
   thor_tasks  = `thor -T`
+  fox_tasks   = `./bin/fox help`
 
   content[ content.index( "$Version$" ) ] = "Version " + version if( content.include?( "$Version$" ) )
   content[ content.index( "$rake_tasks$" ) ] = rake_tasks.to_s if( content.include?( "$rake_tasks$" ) )
   content[ content.index( "$thor_tasks$" ) ] = thor_tasks.to_s if( content.include?( "$thor_tasks$" ) )
+  content[ content.index( "$fox_tasks$" ) ] = fox_tasks.to_s if( content.include?( "$fox_tasks$" ) )
+
+
   File.write( target, content.join("\n") )
   puts "(II) #{target.to_s} generated from #{source.to_s}"
 end # }}}
