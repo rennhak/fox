@@ -4,6 +4,9 @@ $Version$
 [![Gem Version](https://badge.fury.io/rb/fox.svg)](http://badge.fury.io/rb/fox)
 [![License](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)
 
+
+## WHAT IS THE FOX PROJECT?
+
 Fox [1] is a complete solution for scientific paper scaffolding, tooling and author support.  It
 allows the bootstrapping or generation of dummy default paper with a rails scaffold like commandline
 tool.
@@ -11,36 +14,60 @@ tool.
 Fox supports the configuration of various methods of pdf push to remote locations to allow for
 efficient file sharing with co-authors.
 
-
-Fox, supports currently the following international journals:
-
- - None, TBD
-
-Fox, supports currently the following international conferences:
-
- - IEEE Robotics & Automation Society (ICRA) [2]
-
-Fox, supports currently the following domestic conferences:
-
- - None, TBD
-
+Fox, currently supports only IEEE Robotics & Automation Society (ICRA) [2].
 
 [1] Paper Fox, named after an in similar spirit deviation from the german "papier tiger"
 [2] IEEE Robotics and Automation Society's flagship conference,  IEEE Robotics & Automation Society, http://icra2015.org/
 
 
-## Installing
+## FEATURES
 
-By running gem comand
+- Application
+  - Ruby VM (2.1 or better)
+- Feature Providing Base Libraries
+  - RVM
+  - Bundler
+  - Datamapper ORM with SQLite3/MySQL
+  - Slim
+  - Various Gems (see Gemfile)
+- Development
+- Development Base Libraries
+  - Rake
+  - Thor
+- Code Quality
+  - Code review
+  - Yard & related  (gem install yard --no-ri --no-rdoc ; gem install rdiscount --no-ri --no-rdoc)
+  - Minimal controllers, delegated to proper Ruby classes
+  - Logic free view templates
+  - Proper Ruby OOP for base functionality
+  - MetricFu/RSpec/Cucumber/DBC/Vagrant/Docker/i18n
+
+
+## ON WHAT HARDWARE DOES IT RUN?
+
+This Software was originally developed and tested on 32-bit x86 / SMP based PCs running on
+Gentoo GNU/Linux 3.12.x. Other direct Linux and Unix derivates should be viable too as
+long as all dynamical linking dependencys are met. 
+
+
+## DOCUMENTATION
+
+A general developers API guide can be extracted from the Yardoc subdirectory which is able to
+generate HTML as well as PDF docs. Please refer to the [Rake|Make]file for additional information
+how to generate this documentation.
+
+## INSTALLING
+
+By running gem comand (stable version)
 
 ```
 gem install fox
 ```
 
-or by adding to `Gemfile`
+or by adding to `Gemfile` (unstable version)
 
 ```ruby
-gem 'fox', git: 'https://github.com/rennhak/fox'
+gem 'fox', git: 'https://github.com/rennhak/fox', branch: 'develop'
 ```
 
 ## Usage
@@ -61,6 +88,67 @@ or from the command line
 Commands:
   fox generate
 ```
+
+## Development
+
+Get a copy of current source from SCM
+
+```sh
+~# git clone https://github.com/rennhak/fox
+```
+
+Install system dependencies (e.g. Debian/GNU)
+
+```sh
+~# apt-get install iconv
+~# apt-get install imagemagick libmagickcore-dev libmagickwand-dev libmagic1 libmagic-dev
+~# apt-get install curl screen less vim
+~# apt-get install zlib1g zlib1g-dev
+```
+
+Install RVM (may not apply)
+
+```sh
+~# curl -sSL https://get.rvm.io | bash -s stable
+```
+
+Make sure to follow install instructions and also integrate it also into your shell. e.g. for ZSH,
+add this line to your .zshrc.
+
+```sh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" ;
+
+or
+
+~# echo "source /usr/local/rvm/scripts/rvm" >> ~/.zshrc
+
+```
+
+Create proper RVM gemset
+
+```sh
+~# rvm --create use 2.1.3@fox_project
+```
+
+Install Ruby VM 2.1.x or better
+
+```sh
+~# rvm install 2.1.3
+```
+
+Install libraries via bundler
+
+```sh
+~# gem install bundler
+~# bundle
+```
+
+Development uses SQLite3
+
+```sh
+~# apt-get install sqlite3 libsqlite3-dev
+```
+
 
 ## Contributing
 
