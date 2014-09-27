@@ -1,0 +1,40 @@
+fox(1) -- Fox Scientific Paper Suite
+====================================
+
+## SYNOPSIS
+
+`fox` COMMAND [--no-color] [--verbose] [ARGS]
+
+## DESCRIPTION
+
+
+## OPTIONS
+
+* `--no-color`:
+  Prints all output without color
+
+* `--verbose`:
+  Prints out additional logging information
+
+## FOX COMMANDS
+
+We divide `fox` subcommands into primary commands and utilities.
+
+## PRIMARY COMMANDS
+
+* [fox config(1)][fox-config]:
+  Specify and read configuration options for fox
+
+* `fox help(1)`:
+  Displays detailed help for each subcommand
+
+## UTILITIES
+
+* `fox check(1)`:
+  Determine whether the requirements for your application are installed
+  and available to bundler
+
+* `fox console(1)`:
+  Start an IRB session in the context of the current hub
+
+

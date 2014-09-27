@@ -1,0 +1,8 @@
+---
+
+# These values are consumed by Thor and Rake
+gem_name:         fox
+author:           Bjoern Rennhak
+organization:     Greylon
+
+
