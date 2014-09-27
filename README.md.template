@@ -7,6 +7,19 @@ $Version$
 [![License](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)
 
 
+```
+   /\   /\             ----( Paper )---- 
+  //\\_//\\     ____     _____ _____  __ 
+  \_     _/    /   /    |  ___/ _ \ \/ / 
+   / * * \    /^^^]     | |_ | | | \  /  
+   \_\O/_/    [   ]     |  _|| |_| /  \  
+    /   \_    [   /     |_|   \___/_/\_\ 
+    \     \_  /  /                       
+     [ [ /  \/ _/      ----------------- 
+    _[ [ \  /_/                          
+```
+
+
 ## WHAT IS THE FOX PROJECT?
 
 Fox [1] is a complete solution for scientific paper scaffolding, tooling and author support.  It

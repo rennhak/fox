@@ -1,10 +1,23 @@
 # Fox
-Version 0.6.3-3-g54da338
+Version 0.6.3-4-g5bf7b9a
 
 (this file is auto-generated from rake readme:topdir)
 
 [![Gem Version](https://badge.fury.io/rb/fox.svg)](http://badge.fury.io/rb/fox)
 [![License](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)](http://img.shields.io/badge/license-GPLv3-brightgreen.svg)
+
+
+```
+   /\   /\             ----( Paper )----
+  //\\_//\\     ____     _____ _____  __
+  \_     _/    /   /    |  ___/ _ \ \/ /
+   / * * \    /^^^]     | |_ | | | \  /
+   \_\O/_/    [   ]     |  _|| |_| /  \
+    /   \_    [   /     |_|   \___/_/\_\
+    \     \_  /  /
+     [ [ /  \/ _/      -----------------
+    _[ [ \  /_/
+```
 
 
 ## WHAT IS THE FOX PROJECT?
