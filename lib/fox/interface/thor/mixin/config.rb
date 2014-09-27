@@ -42,13 +42,30 @@ module Mixin
         FileUtils.mkdir_p( uri ) unless( File.exists?( uri ) )
       end
 
+
       # Remote Assets URLs
-      @urls                      = OpenStruct.new
+      @urls                               = OpenStruct.new
 
-      @urls.pomodoro_5_mp3       = ''
-      @urls.pomodoro_25_mp3      = ''
+      @urls.pomodoro                      = OpenStruct.new
+      @urls.pomodoro.short                = 'https://github.com/rennhak/fox/raw/master/data/pomodoro/pomodoro_5.mp3'
+      @urls.pomodoro.normal               = 'https://github.com/rennhak/fox/raw/master/data/pomodoro/pomodoro_25.mp3'
 
-      @urls.coffeeshop_mp3       = ''
+      @urls.coffeeshop                    = OpenStruct.new
+      @urls.coffeeshop.morning_murmur     = 'https://github.com/rennhak/fox/raw/master/data/coffeeshop/morning_murmur.mp3'
+
+
+      # Assets
+      @assets                             = OpenStruct.new
+
+      @assets.pomodoro                    = OpenStruct.new
+      @assets.pomodoro.short              = File.join( @paths.pomodoro_assets, File.basename( @urls.pomodoro.short ) )
+      @assets.pomodoro.normal             = File.join( @paths.pomodoro_assets, File.basename( @urls.pomodoro.normal ) )
+
+      # Config
+      @config                             = OpenStruct.new
+
+      @config.pomodoro                    = OpenStruct.new
+      @config.pomodoro.default            = :normal
 
 
     end # }}}

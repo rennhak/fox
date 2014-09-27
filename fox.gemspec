@@ -88,6 +88,8 @@ Gem::Specification.new do |spec|
   # Shell
   spec.add_runtime_dependency 'ptools'
   spec.add_runtime_dependency 'os'
+  spec.add_runtime_dependency 'progressbar'
+
 
   # Database ORM (Persistent)
   spec.add_runtime_dependency 'datamapper'
@@ -126,6 +128,9 @@ Gem::Specification.new do |spec|
   # Monadic/Functional
   spec.add_runtime_dependency 'andand'
   # spec.add_runtime_dependency 'ick'
+
+  # Audio
+  spec.add_runtime_dependency 'rtaglib'
 
   # Misc System
   # spec.add_runtime_dependency 'awesome_print'
