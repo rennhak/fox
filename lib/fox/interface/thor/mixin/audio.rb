@@ -2,7 +2,7 @@
 
 
 # System
-# require 'taglib'
+require 'taglib'
 
 
 # @module       module Mixin
@@ -34,11 +34,37 @@ module Mixin
     #
     # @param    [String]      file      Filename incl. path
     def play_local file
+      duration = get_duration( file )
+      p duration
+
       play( file, :file )
     end # }}}
 
 
     private
+
+    # in sec
+    def get_duration file
+
+      duration = nil
+
+      begin
+        TagLib::FileRef.open( file ) do |fileref|
+
+          unless fileref.null?
+            tag         = fileref.tag
+            properties  = fileref.audio_properties
+
+            duration    = properties.length
+          end
+
+        end # of TagLib
+      rescue
+      end
+
+      return duration
+    end
+
 
     def play identifier, type
 
