@@ -1,5 +1,6 @@
 # Fox
-Version 0.6.3-2-gbf66f35
+Version 0.6.3-3-g54da338
+
 (this file is auto-generated from rake readme:topdir)
 
 [![Gem Version](https://badge.fury.io/rb/fox.svg)](http://badge.fury.io/rb/fox)
