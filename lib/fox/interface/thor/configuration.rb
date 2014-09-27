@@ -24,7 +24,7 @@ class Configuration < Thor
   option :pretend, desc: "Pretend switch for Fox operations"
 
   def generate
-    template_path   = File.expand_path(File.dirname(__FILE__) + '/../../template/config.tt') 
+    template_path   = File.expand_path(File.dirname(__FILE__) + '/../../template/config/config.tt') 
     source_paths    << template_path
     config          = defaults['fox'].merge(options)
     template(template_path, config_path, config)

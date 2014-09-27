@@ -9,7 +9,7 @@ module Mixin
   module ConfigChoice
 
     def config_choice
-      defaults = YAML.load_file(File.expand_path( File.dirname( __FILE__ ) + '/../../../template/default_values.yml'))
+      defaults = YAML.load_file(File.expand_path( File.dirname( __FILE__ ) + '/../../../template/config/default_values.yml'))
       defaults['fox'].each_key { |key| choice_option(defaults['fox'], key) }
       defaults
     end
