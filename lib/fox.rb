@@ -7,19 +7,32 @@ require 'rake'
 require 'ruby-try'
 
 
-# @class    Fox
-# @brief    Provides complete solution for scientific authoring
-class Fox
+# @module         module Fish
+# @brief          Fish modules and classes namespace
+module Fox
 
-  # @fn       def initialize {{{
-  # @brief    Default Constructor
-  def initialize
-  end # }}}
+    require_relative 'fox/version'
+    require_relative 'fox/error'
+
+    # @module     module Mixin
+    # @brief      Mixin module contains various functions to be used in other components
+    module Mixin
+
+        # autoload :Guess, 'fox/mixin/'
+
+    end # of module Mixing
+
+    # autoload :Cache,      'fish/library/cache'
+    # autoload :Choice,     'fish/library/choice'
+
+
+    DEFAULT_CONFIG      = '.fox/config.yaml'.freeze
+
+    class << self
+    end # of class << self
 
 end # of module Fox
 
-# Load other library files
-Dir[ File.dirname(__FILE__) + '/fox/library/*.rb' ].each { |file| require file }
-
+Default.start
 
 # vim:ts=2:tw=100:wm=100:syntax=ruby
