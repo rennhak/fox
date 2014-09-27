@@ -58,7 +58,8 @@ Gem::Specification.new do |spec|
 
   spec.files                += Dir.glob( 'spec/**/*' )
 
-  spec.files                += Dir.glob( 'data/**/*' )
+  # Exclude data folder (too big)
+  # spec.files                += Dir.glob( 'data/**/*' )
 
   spec.files                += Dir.glob( 'documentation/**/*' )
 
