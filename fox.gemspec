@@ -155,16 +155,16 @@ Gem::Specification.new do |spec|
   //\\_//\\     ____     _____ _____  __ 
   \_     _/    /   /    |  ___/ _ \ \/ / 
    / * * \    /^^^]     | |_ | | | \  /  
-   \_\O/_/    [   ]     |  _|| |_| /  \  
+    \_\O/_/    [   ]     |  _|| |_| /  \  
     /   \_    [   /     |_|   \___/_/\_\ 
     \     \_  /  /                       
      [ [ /  \/ _/      ----------------- 
     _[ [ \  /_/                          
 
-    (c) #{spec.date.to_s}, All rights reserved
+    (c) 2014, All rights reserved
     Bjoern Rennhak
 
-    Don't forget to configure $HOME/.fox/config.
+    Don't forget to configure $HOME/.fox/config.yml.
     To generate config file under $HOME/.fox/ directory,
     please run 'fox config:generate' command
 

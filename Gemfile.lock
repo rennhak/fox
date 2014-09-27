@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fox (0.6.2)
+    fox (0.6.3)
       andand
       bundler
       data_mapper
