@@ -4,9 +4,6 @@
 $LOAD_PATH << '.'
 $LOAD_PATH << 'lib'
 
-$LOAD_PATH << File.expand_path("#{File.expand_path('../..', __FILE__)}/lib/fox/messages")
-$LOAD_PATH << File.expand_path("#{File.expand_path('../..', __FILE__)}/lib/fox/service")
-
 # System includes
 require 'bundler'
 
@@ -16,27 +13,23 @@ require 'thor/runner'
 
 # Development Mode?
 if ENV["FOX_ENV"] == "development"
-    require "simplecov"
+  require "simplecov"
 
-    # Ensure merging of subprocesses by giving them a special name
-    # SimpleCov.command_name ARGV.join(" ")
-    SimpleCov.command_name "Fox #{Process.pid}"
+  # Ensure merging of subprocesses by giving them a special name
+  # SimpleCov.command_name ARGV.join(" ")
+  SimpleCov.command_name "Fox #{Process.pid}"
 
-    # Set the correct root folder for SimpleCov
-    SimpleCov.root File.join(File.expand_path(File.dirname(__FILE__)), "..")
+  # Set the correct root folder for SimpleCov
+  SimpleCov.root File.join(File.expand_path(File.dirname(__FILE__)), "..")
 
-    # Start coverage
-    SimpleCov.start
+  # Start coverage
+  SimpleCov.start
 end # of if ENV
 
-
-# Fox::Runner.new( ARGV.dup ).execute!
-$thor_runner            = true
-
-require File.expand_path("#{File.expand_path('../..', __FILE__)}/lib/fox/cli")
-
-$thor_runner = true
-CLI.start
-
+require 'fox'
+# require File.expand_path("#{File.expand_path('../..', __FILE__)}/lib/fox/cli")
+# CLI.start
+# $thor_runner            = true
+Fox::Runner.new(ARGV.dup).execute!
 
 # vim:ts=2:tw=100:wm=100:syntax=ruby

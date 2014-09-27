@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    fox (0.6.1)
+    fox (0.6.2)
       andand
+      bundler
       data_mapper
       datamapper
       dm-core

@@ -82,6 +82,7 @@ Gem::Specification.new do |spec|
 
   # General
   spec.add_runtime_dependency 'thor'
+  spec.add_runtime_dependency 'bundler'
 
   # Package building
   spec.add_runtime_dependency 'fpm'
