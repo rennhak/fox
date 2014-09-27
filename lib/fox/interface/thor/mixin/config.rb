@@ -67,7 +67,6 @@ module Mixin
       @config.pomodoro                    = OpenStruct.new
       @config.pomodoro.default            = :normal
 
-
     end # }}}
 
     Thor::class_option :'config-path', :type => :string, :required => false, :default => "#{Dir.home}/.fox", :desc => 'Change default config path'

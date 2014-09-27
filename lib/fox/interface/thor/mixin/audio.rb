@@ -3,6 +3,7 @@
 
 # System
 require 'taglib'
+require 'progressbar'
 
 
 # @module       module Mixin
@@ -34,10 +35,26 @@ module Mixin
     #
     # @param    [String]      file      Filename incl. path
     def play_local file
-      duration = get_duration( file )
-      p duration
 
-      play( file, :file )
+      duration = get_duration( file ) # in sec
+
+      if( duration.nil? )
+        play( file, :file )
+      else
+
+        threads     = []
+
+        threads     <<  Thread.new { play( file, :file ) }
+        threads     <<  Thread.new do
+          ProgressBar.new( "Pomodoro", duration.to_i ) do |bar|
+            duration.to_i.times { sleep(1); bar.inc }
+          end
+        end
+
+        threads.each { |thread| thread.join }
+
+      end # if( duration.nil? )
+
     end # }}}
 
 

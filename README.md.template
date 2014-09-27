@@ -104,6 +104,7 @@ Install system dependencies (e.g. Debian/GNU)
 ~# apt-get install imagemagick libmagickcore-dev libmagickwand-dev libmagic1 libmagic-dev
 ~# apt-get install curl screen less vim
 ~# apt-get install zlib1g zlib1g-dev
+~# apt-get install taglib
 ```
 
 Install RVM (may not apply)

@@ -29,10 +29,10 @@ module Mixin
       super
     end # }}}
 
-    # @fn     def online? {{{
-    # @brief  Checks if user is online so we can download assets
+    # @fn       def online? {{{
+    # @brief    Checks if user is online so we can download assets
     #
-    # @return [boolean]     True if online, otherwise false
+    # @return   [boolean]     True if online, otherwise false
     def online?
 
       begin

@@ -24,10 +24,10 @@ class Pomodoro < Thor
   class_option :stream,   :type => :boolean, :desc => 'Stream from github.com remote', :default => false
   class_option :download, :type => :boolean, :desc => 'Download from github.com remote', :default => true
 
-  # @fn       
-  # @brief    
-  desc 'normal', 'Plays normal Pomodoro clock so that you can concentrate'
-  def normal
+  # @fn       def default {{{
+  # @brief    Plays default Pomodoro clock (25 min)
+  desc 'default', 'Plays default Pomodoro clock (25 min) so that you can concentrate'
+  def default
 
     @logger.message :debug, 'Running sanity check for Pomodoro task'
     sanity_check
@@ -41,6 +41,27 @@ class Pomodoro < Thor
       @logger.message :info, 'Playing local file (use CTRL+C to abort)'
 
       play_local( @assets.pomodoro.send( @config.pomodoro.default ) )
+    end
+
+  end # }}}
+
+  # @fn       def short {{{
+  # @brief    Plays short Pomodoro clock (5 min)
+  desc 'short', 'Plays short Pomodoro clock (5 min) so that you can concentrate'
+  def short
+
+    @logger.message :debug, 'Running sanity check for Pomodoro task'
+    sanity_check
+
+    if( options[:stream] ) 
+      @logger.message :info, 'Streaming from Remote via github.com raw (use CTRL+C to abort)'
+      @logger.message :warning, 'Please do not hammer github.com, download if possible instead'
+
+      play_remote( @urls.pomodoro.short )
+    else
+      @logger.message :info, 'Playing local file (use CTRL+C to abort)'
+
+      play_local( @assets.pomodoro.short )
     end
 
   end # }}}
