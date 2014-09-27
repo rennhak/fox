@@ -9,6 +9,7 @@ require 'os'
 
 # Custom includes
 require File.expand_path( File.dirname( __FILE__ ) + '/mixin/logger' )
+require File.expand_path( File.dirname( __FILE__ ) + '/../../library/project_builder' )
 
 
 # @class  New command class
@@ -29,11 +30,11 @@ class New < Thor
 
     @logger.message :info, "Generating project '#{projectname.to_s}' in folder './#{projectname.to_s}'"
 
-    type            = select_type
+    type      = select_type
     @logger.message :info, "Using #{type.to_s} type"
 
-    template_path   = File.expand_path(File.dirname(__FILE__) + '/../../template/document/' + type.to_s )
-    ProjectBuilder.load( type.to_s + ".fox" )
+    template  = File.expand_path( File.dirname(__FILE__) + '/../../template/document/' + type.to_s + "/" + type.to_s + ".fox" )
+    ProjectBuilder.load( projectname.to_s, template )
 
   end # }}}
 

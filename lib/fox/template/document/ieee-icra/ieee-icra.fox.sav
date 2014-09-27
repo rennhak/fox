@@ -1,8 +1,11 @@
 
 create_project do
-
   dir "archive" do
-    touch :LINKS
+      touch :LINKS
+  end
+
+  dir "bin" do
+      create_from_template :exe, name
   end
 
   dir "lib" do
@@ -15,6 +18,4 @@ create_project do
   dir "test"
 
   touch :CHANGELOG, :README, :TODO
-
 end
-
