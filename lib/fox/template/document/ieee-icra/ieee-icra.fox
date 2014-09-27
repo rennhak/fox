@@ -1,0 +1,14 @@
+
+create_project do
+
+  dir 'archive' do
+    touch :'.gitignore'
+  end
+
+
+
+  touch :README
+
+end # of create_project
+
+# vim:ts=2:tw=100:wm=100:syntax=ruby

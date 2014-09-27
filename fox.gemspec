@@ -58,8 +58,6 @@ Gem::Specification.new do |spec|
 
   spec.files                += Dir.glob( 'spec/**/*' )
 
-  spec.files                += Dir.glob( 'thrift/**/*' )
-
   spec.files                += Dir.glob( 'data/**/*' )
 
   spec.files                += Dir.glob( 'documentation/**/*' )
@@ -67,6 +65,10 @@ Gem::Specification.new do |spec|
   spec.files                += Dir.glob( 'examples/**/*' )
 
   spec.files                += Dir.glob( 'base/**/*' )
+
+  spec.files                += Dir.glob( 'lib/fox/template/*' )
+
+  spec.files                += Dir.glob( 'lib/thrift/**/*' )
 
   spec.test_files           += Dir.glob( 'test/**/*' )
   spec.test_files           += Dir.glob( 'spec/**/*' )
@@ -79,11 +81,47 @@ Gem::Specification.new do |spec|
 
   # General
   spec.add_runtime_dependency 'thor'
-  spec.add_runtime_dependency 'ruby-try', '~> 1.1.1'
+
+  # Package building
+  spec.add_runtime_dependency 'fpm'
 
   # Shell
   spec.add_runtime_dependency 'ptools'
   spec.add_runtime_dependency 'os'
+
+  # Database ORM (Persistent)
+  spec.add_runtime_dependency 'datamapper'
+  spec.add_runtime_dependency 'data_mapper'
+  spec.add_runtime_dependency 'dm-core'
+  spec.add_runtime_dependency 'dm-tags'
+  spec.add_runtime_dependency 'dm-migrations'
+  spec.add_runtime_dependency 'dm-types'
+  spec.add_runtime_dependency 'dm-enum'
+  spec.add_runtime_dependency 'dm-validations'
+  spec.add_runtime_dependency 'dm-timestamps'
+  spec.add_runtime_dependency 'dm-sqlite-adapter'
+  spec.add_runtime_dependency 'dm-do-adapter'
+
+  # Data RPCs and Messaging
+  spec.add_runtime_dependency 'msgpack'
+
+  spec.add_runtime_dependency 'faraday'
+  spec.add_runtime_dependency 'mime-types'
+
+  # Data Exchange Containers/Parsing
+  spec.add_runtime_dependency 'oj'
+
+  # Caching
+  spec.add_runtime_dependency 'moneta'
+
+  # Mail
+  spec.add_runtime_dependency 'pony'
+
+  # l10n
+  spec.add_runtime_dependency 'gettext'
+
+  # Rest interface
+  spec.add_runtime_dependency 'rack'
 
   # Monadic/Functional
   spec.add_runtime_dependency 'andand'

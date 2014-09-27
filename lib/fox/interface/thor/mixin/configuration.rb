@@ -15,8 +15,9 @@ module Mixin
     # @param    [Array]     args      Argument array
     def initialize *args
       super
+
       unless File.exist?("~/.fox/config.yaml")
-          abort("Could not find configuration file in ~/fox/config.yaml. Please run 'fox config:generate' to generate it.")
+        abort("Could not find configuration file in ~/.fox/config.yaml. Please run 'fox config:generate' to generate it.")
       end
     end # }}}
 

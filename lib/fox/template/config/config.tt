@@ -1,0 +1,6 @@
+---
+
+fox:
+  pretend: <%= config['pretend'] %>
+
+

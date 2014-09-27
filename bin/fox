@@ -2,21 +2,41 @@
 
 # Make sure load path contains local + global
 $LOAD_PATH << '.'
-$LOAD_PATH << File.dirname( File.join( __FILE__, '../lib/' ) )
+$LOAD_PATH << 'lib'
+
+$LOAD_PATH << File.expand_path("#{File.expand_path('../..', __FILE__)}/lib/fox/messages")
+$LOAD_PATH << File.expand_path("#{File.expand_path('../..', __FILE__)}/lib/fox/service")
 
 # System includes
 require 'bundler'
+
+# Make Thor scripts debug-able, e.g. ruby -r debug -- Thorfile
 require 'thor' unless defined? Thor::Runner
+require 'thor/runner'
 
-# Custom includes
-require_relative '../lib/fox'
+# Development Mode?
+if ENV["FOX_ENV"] == "development"
+    require "simplecov"
+
+    # Ensure merging of subprocesses by giving them a special name
+    # SimpleCov.command_name ARGV.join(" ")
+    SimpleCov.command_name "Fox #{Process.pid}"
+
+    # Set the correct root folder for SimpleCov
+    SimpleCov.root File.join(File.expand_path(File.dirname(__FILE__)), "..")
+
+    # Start coverage
+    SimpleCov.start
+end # of if ENV
 
 
-# @class      Fox executable
-# @brief      Main entry point for commandline execution
-class Default < Thor
-end # of class Default
+# Fox::Runner.new( ARGV.dup ).execute!
+$thor_runner            = true
 
-Default.start( ARGV )
+require File.expand_path("#{File.expand_path('../..', __FILE__)}/lib/fox/cli")
+
+$thor_runner = true
+CLI.start
+
 
 # vim:ts=2:tw=100:wm=100:syntax=ruby

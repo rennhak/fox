@@ -22,6 +22,12 @@ module Mixin
       super
     end # }}}
 
+    # @fn         def languages {{{
+    # @brief      return supported languges at the current moment
+    def languages
+      %w{java}
+    end # of def languages
+
   end # of module Default
 
 end # of module Mixin

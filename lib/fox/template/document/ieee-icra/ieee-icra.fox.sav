@@ -1,0 +1,21 @@
+
+create_project do
+  dir "archive" do
+      touch :LINKS
+  end
+
+  dir "bin" do
+      create_from_template :exe, name
+  end
+
+  dir "lib" do
+      create_rb_file name
+      dir name do
+          create_rb_file name
+      end
+  end
+
+  dir "test"
+
+  touch :CHANGELOG, :README, :TODO
+end
