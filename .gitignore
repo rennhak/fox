@@ -10,3 +10,4 @@ lib/geohash36/man
 coverage/
 doc/
 .yardoc
+lib/fox/man
