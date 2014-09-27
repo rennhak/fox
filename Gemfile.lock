@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fox (0.2.0)
+    fox (0.3.0)
       andand
       data_mapper
       datamapper
