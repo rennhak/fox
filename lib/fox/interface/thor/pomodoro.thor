@@ -16,43 +16,20 @@ class Pomodoro < Thor
   include Thor::Actions
   include ::Mixin::Logger
   include ::Mixin::Config
+  include ::Mixin::Network
 
   # class_option :'ieee-icra',  :type => :boolean, :desc => "IEEE Robotics & Automation Society (ICRA)", :default => false
 
-
-  # @fn       def new projectname {{{
-  # @brief    Generates new project with given PROJECTNAME
-  # desc "generate PROJECTNAME", "Creates new project PROJECTNAME"
-  # def generate projectname
-  # end # }}}
-
-
+  # @fn       
+  # @brief    
   desc "run", "Starts Pomodoro clock"
   def tick
-
-    p online?
-
-  end
+    
+  end # }}}
 
   private
 
   no_tasks do
-
-    # @fn     def online? {{{
-    # @brief  Checks if user is online so we can download assets
-    #
-    # @return [boolean]     True if online, otherwise false
-    def online?
-
-      begin
-        true if open( "http://www.google.com/", { read_timeout: 5 } )
-      rescue
-        false
-      end
-
-    end # }}}
-
-
   end # of no_tasks do
 
 end # of Class New
