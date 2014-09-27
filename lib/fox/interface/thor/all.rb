@@ -9,7 +9,7 @@ require File.expand_path( File.dirname( __FILE__ ) + '/mixin/logger' )
 require File.expand_path( File.dirname( __FILE__ ) + '/mixin/database' )
 
 # @class      class All
-# @brief      drop structure from Hydra Service
+# @brief      drop structure from Fox Service
 class All < Thor
 
   # Include various partials

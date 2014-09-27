@@ -7,8 +7,8 @@ require 'rake'
 require 'ruby-try'
 
 
-# @module         module Fish
-# @brief          Fish modules and classes namespace
+# @module         module Fox
+# @brief          Fox modules and classes namespace
 module Fox
 
     require_relative 'fox/version'
@@ -22,8 +22,8 @@ module Fox
 
     end # of module Mixing
 
-    # autoload :Cache,      'fish/library/cache'
-    # autoload :Choice,     'fish/library/choice'
+    # autoload :Cache,      'fox/library/cache'
+    # autoload :Choice,     'fox/library/choice'
 
 
     DEFAULT_CONFIG      = '.fox/config.yaml'.freeze
