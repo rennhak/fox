@@ -26,8 +26,8 @@ class Pomodoro < Thor
 
   # @fn       
   # @brief    
-  desc 'run', 'Starts Pomodoro clock'
-  def tick
+  desc 'normal', 'Plays normal Pomodoro clock so that you can concentrate'
+  def normal
 
     @logger.message :debug, 'Running sanity check for Pomodoro task'
     sanity_check

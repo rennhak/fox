@@ -130,7 +130,7 @@ Gem::Specification.new do |spec|
   # spec.add_runtime_dependency 'ick'
 
   # Audio
-  spec.add_runtime_dependency 'rtaglib'
+  spec.add_runtime_dependency 'taglib-ruby'
 
   # Misc System
   # spec.add_runtime_dependency 'awesome_print'
