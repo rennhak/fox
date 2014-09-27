@@ -1,20 +1,14 @@
 
 create_project do
 
-  dir "archive" do
-    touch :LINKS
+  dir 'archive' do
+    touch :'.gitignore'
   end
 
-  dir "lib" do
-      create_rb_file name
-      dir name do
-          create_rb_file name
-      end
-  end
 
-  dir "test"
 
-  touch :CHANGELOG, :README, :TODO
+  touch :README
 
-end
+end # of create_project
 
+# vim:ts=2:tw=100:wm=100:syntax=ruby

@@ -7,29 +7,9 @@ require 'andand'
 require 'fileutils'
 
 
-
+# @fn       class ProjectBuilder
+# @brief    Handles project bootstrapping via convenient Fox DSL
 class ProjectBuilder
-
-    attr_reader :name
-
-  TEMPLATES = {
-      :exe =>
-<<-EOT
-#!/usr/bin/ruby -w
-
-require 'rubygems'
-require 'commandline
-require '%name%'
-
-class %name.capitalize%App < CommandLine::Application
-  def initialize
-  end
-
-  def main
-  end
-end#class %name.capitalize%App
-EOT
-    }
 
   def initialize name
     @name           = name
@@ -41,15 +21,16 @@ EOT
     @cwd            = @project_dir
   end
 
-  def create_project
-    yield
-  end # of def create_project }}}
-
   def self.load project_name, dsl
     proj = new( project_name )
     proj = proj.instance_eval( File.read(dsl), dsl )
     proj
   end # of def self.load }}}
+
+
+  def create_project
+    yield
+  end # of def create_project }}}
 
   def dir dir_name
     old_cwd = @cwd
