@@ -5,7 +5,6 @@
 # @brief          Fox module namespace
 module Fox
 
-
   class FoxError < StandardError
 
     class << self

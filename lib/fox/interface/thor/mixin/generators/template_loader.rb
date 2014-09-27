@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'fox/error/errors'
+# require 'fox/error/errors'
 
 module Mixin
 

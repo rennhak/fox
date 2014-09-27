@@ -27,7 +27,10 @@ class Pomodoro < Thor
   # end # }}}
 
 
-  def run
+  desc "run", "Starts Pomodoro clock"
+  def tick
+
+    p online?
 
   end
 
