@@ -70,7 +70,7 @@ or by adding to `Gemfile` (unstable version)
 gem 'fox', git: 'https://github.com/rennhak/fox', branch: 'develop'
 ```
 
-## Usage
+## USAGE
 
 As library
 
@@ -89,7 +89,7 @@ Commands:
   fox generate
 ```
 
-## Development
+## DEVELOPMENT
 
 Get a copy of current source from SCM
 
@@ -148,6 +148,46 @@ Development uses SQLite3
 ```sh
 ~# apt-get install sqlite3 libsqlite3-dev
 ```
+
+### BUILDING GEM
+
+```sh
+~# rake build
+```
+
+### INSTALLING GEM
+
+```sh
+~# gem install pkg/fox-X.X.X.gem
+```
+
+### SUBMIT TO RUBYGEMS.ORG
+
+```sh
+~# cd pkg
+~# gem push -V fox-X.X.X.gem
+```
+
+### CURRENTLY AVAILABLE RAKE TASKS
+
+For a full list of Rake tasks suported, use `rake -T`.
+
+$rake_tasks$
+
+
+### CURRENTLY AVAILABLE THOR TASKS
+
+For a full list of Thor tasks suported, use `thor -T`.
+
+$thor_tasks$
+
+
+## IF SOMETHING GOES WRONG
+
+In case you enconter bugs which seem to be related to the package please check in
+the MAINTAINERS file for the associated person in charge and contact him or her directly. If
+there is no valid address then try to mail Bjoern Rennhak <bjoern AT clothesnetwork DOT com> to get
+some basic assistance in finding the right person in charge of this section of the project.
 
 
 ## Contributing
